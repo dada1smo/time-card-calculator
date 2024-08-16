@@ -1,9 +1,16 @@
 <script setup lang="ts">
-import Button from 'primevue/button'
+import DailyTime from '../components/DailyTime.vue'
 </script>
 
 <template>
   <main>
-    <Button>Teste</Button>
+    <DailyTime />
   </main>
 </template>
+
+<style lang="scss" scoped>
+main {
+  min-height: 90vh;
+  display: flex;
+}
+</style>

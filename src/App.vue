@@ -7,13 +7,6 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-body {
-  font-family: 'Archivo', sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: 'wdth' 100;
-}
-
 header {
   line-height: 1.5;
   max-height: 100vh;

@@ -7,7 +7,12 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    DailyTime: typeof import('./src/components/DailyTime.vue')['default']
+    DatePicker: typeof import('primevue/datepicker')['default']
+    InputNumber: typeof import('primevue/inputnumber')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TimeInput: typeof import('./src/components/TimeInput.vue')['default']
+    TimeTotal: typeof import('./src/components/TimeTotal.vue')['default']
   }
 }
