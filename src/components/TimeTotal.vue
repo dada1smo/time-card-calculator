@@ -17,11 +17,11 @@ defineProps(['total'])
   gap: 4px;
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   span {
-    color: var(--p-emerald-300);
+    color: var(--p-emerald-400);
   }
 }
 </style>

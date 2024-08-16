@@ -1,11 +1,13 @@
 <script setup lang="ts">
 defineProps(['label', 'id'])
+
+const model = defineModel<Date>()
 </script>
 
 <template>
   <div class="field">
     <label :for="id">{{ label }}</label>
-    <slot></slot>
+    <DatePicker v-model="model" :inputId="id" fluid timeOnly />
   </div>
 </template>
 

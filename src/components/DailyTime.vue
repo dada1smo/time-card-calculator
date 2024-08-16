@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import DatePicker from 'primevue/datepicker'
 import { ref, watch } from 'vue'
 import TimeInput from './TimeInput.vue'
 import TimeTotal from './TimeTotal.vue'
@@ -27,27 +26,10 @@ watch([firstEntrance, firstExit, secondEntrance, secondExit], () => {
 
 <template>
   <div class="row">
-    <TimeInput id="firstEntrance" label="1ª entrada">
-      <DatePicker v-model="firstEntrance" inputId="firstExist" fluid timeOnly />
-    </TimeInput>
-
-    <TimeInput id="firstExit" label="1ª saída">
-      <DatePicker v-model="firstExit" inputId="firstEntrance" label="1a entrada" fluid timeOnly />
-    </TimeInput>
-
-    <TimeInput id="secondEntrance" label="2ª entrada">
-      <DatePicker
-        v-model="secondEntrance"
-        inputId="secondEntrance"
-        label="1a entrada"
-        fluid
-        timeOnly
-      />
-    </TimeInput>
-
-    <TimeInput id="secondExit" label="2ª saída">
-      <DatePicker v-model="secondExit" inputId="secondExit" label="1a entrada" fluid timeOnly />
-    </TimeInput>
+    <TimeInput id="firstEntrance" label="1ª entrada" v-model="firstEntrance" />
+    <TimeInput id="firstExit" label="1ª saída" v-model="firstExit" />
+    <TimeInput id="secondEntrance" label="2ª entrada" v-model="secondEntrance" />
+    <TimeInput id="secondExit" label="2ª saída" v-model="secondExit" />
 
     <TimeTotal :total="total" />
   </div>
