@@ -6,7 +6,7 @@ import Logo from './Logo.vue'
   <div class="panel">
     <div class="controls">
       <Logo />
-      <Button severity="contrast" icon="pi pi-refresh" @click="" outlined />
+      <Button severity="contrast" icon="pi pi-refresh" outlined />
     </div>
     <Divider />
     <div class="content">

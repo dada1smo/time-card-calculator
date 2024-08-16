@@ -18,6 +18,10 @@
   align-items: center;
   color: var(--p-zinc-600);
   gap: 8px;
+
+  i {
+    font-size: 2rem;
+  }
 }
 
 .logo {
