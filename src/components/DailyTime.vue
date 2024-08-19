@@ -4,6 +4,8 @@ import TimeInput from './TimeInput.vue'
 import TimeTotal from './TimeTotal.vue'
 import { getTimeTotal, handleInititalTime } from '@/utils/time'
 
+defineProps(['id'])
+
 const firstEntrance = ref(handleInititalTime(9))
 const firstExit = ref(handleInititalTime(12))
 const secondEntrance = ref(handleInititalTime(13))
@@ -26,10 +28,10 @@ watch([firstEntrance, firstExit, secondEntrance, secondExit], () => {
 
 <template>
   <div class="row">
-    <TimeInput id="firstEntrance" label="1ª entrada" v-model="firstEntrance" />
-    <TimeInput id="firstExit" label="1ª saída" v-model="firstExit" />
-    <TimeInput id="secondEntrance" label="2ª entrada" v-model="secondEntrance" />
-    <TimeInput id="secondExit" label="2ª saída" v-model="secondExit" />
+    <TimeInput :id="`firstEntrance-${id}`" label="1ª entrada" v-model="firstEntrance" />
+    <TimeInput :id="`firstExit-${id}`" label="1ª saída" v-model="firstExit" />
+    <TimeInput :id="`secondEntrance-${id}`" label="2ª entrada" v-model="secondEntrance" />
+    <TimeInput :id="`secondExit-${id}`" label="2ª saída" v-model="secondExit" />
 
     <TimeTotal :total="total" />
   </div>

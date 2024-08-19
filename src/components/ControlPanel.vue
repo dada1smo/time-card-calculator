@@ -1,16 +1,34 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import Logo from './Logo.vue'
+
+const items = ref([1])
+
+function refresh() {
+  items.value = [items.value[0] - 1]
+}
+
+function add() {
+  items.value.push(items.value[items.value.length - 1] + 1)
+}
 </script>
 
 <template>
   <div class="panel">
-    <div class="controls">
+    <div class="header">
       <Logo />
-      <Button severity="contrast" icon="pi pi-refresh" outlined />
+      <div class="controls">
+        <Button @click="add" severity="contrast" icon="pi pi-plus" outlined />
+        <Divider layout="vertical" />
+        <Button @click="refresh" severity="contrast" icon="pi pi-refresh" outlined />
+      </div>
     </div>
     <Divider />
     <div class="content">
-      <DailyTime />
+      <div class="item" v-for="item in items" :key="item">
+        <div class="daily"><DailyTime :id="item" /></div>
+        <Divider v-if="item !== items[items.length - 1]" />
+      </div>
     </div>
   </div>
 </template>
@@ -24,7 +42,7 @@ import Logo from './Logo.vue'
   border-radius: var(--p-border-radius-md);
 }
 
-.controls {
+.header {
   padding: 0 16px;
   display: flex;
   gap: 8px;
@@ -32,7 +50,22 @@ import Logo from './Logo.vue'
   justify-content: space-between;
 }
 
+.controls {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
 .content {
-  padding: 8px 16px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  padding: 8px 0;
+
+  .daily {
+    padding: 0 16px 12px;
+  }
 }
 </style>
